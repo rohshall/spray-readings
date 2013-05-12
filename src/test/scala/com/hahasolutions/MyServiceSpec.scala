@@ -1,4 +1,4 @@
-package com.example
+package com.hahasolutions
 
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
@@ -11,9 +11,9 @@ class MyServiceSpec extends Specification with Specs2RouteTest with MyService {
   
   "MyService" should {
 
-    "return a greeting for GET requests to the root path" in {
+    "return a list of devices for GET requests to the root path" in {
       Get() ~> myRoute ~> check {
-        entityAs[String] must contain("Say hello")
+        entityAs[String] must contain("Devices Available")
       }
     }
 
